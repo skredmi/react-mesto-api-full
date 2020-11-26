@@ -1,0 +1,23 @@
+.elements__button {
+    background-image: url(../../../images/basket.png);
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    transition: opacity 0.3s linear;
+    display: none;
+}
+
+.elements__button:hover {
+    opacity: 0.6;
+}

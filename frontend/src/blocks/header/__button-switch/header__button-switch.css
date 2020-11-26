@@ -1,0 +1,27 @@
+.header__button-switch {
+    min-height: 22px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    padding-bottom: 46px;
+}
+
+.header__button-switch:hover {
+    transition: opacity 0.3s linear;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+    .header__button-switch {
+        min-height: 17px;
+        font-size: 14px;
+        line-height: 17px;
+        padding-bottom: 33px;
+        padding-right: 30px;
+    } 
+}

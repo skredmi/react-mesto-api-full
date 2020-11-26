@@ -1,0 +1,16 @@
+.elements__item {
+    max-width: 282px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (max-width: 882px) {
+    .elements__item {
+        max-width: 400px;
+        border-radius: 15px;
+    }
+}
