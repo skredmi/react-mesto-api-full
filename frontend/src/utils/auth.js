@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "http://api.praktikummesto.students.nomoreparties.space";
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
