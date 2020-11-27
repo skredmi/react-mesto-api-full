@@ -10,7 +10,7 @@ const {
 } = require('../controllers/users.js');
 
 router.get('/users', getUsers);
-// router.get('/users/me', getUserInfo);
+router.get('/users/me', getUserInfo);
 router.get(
   '/users/:id',
   celebrate({

@@ -9,7 +9,6 @@ const routes = require('./routes/index.js');
 const auth = require('./middlewares/auth.js');
 const { login, createUser } = require('./controllers/users.js');
 const { requestLogger, errorLogger } = require('./middlewares/logger.js');
-const { HttpTransportOptions } = require('winston/lib/winston/transports');
 
 const app = express();
 const { PORT = 3000 } = process.env;

@@ -100,16 +100,16 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
-// const getUserInfo = (req, res, next) => {
-//   User.findById(req.user.id)
-//     .then((user) => {
-//       if (!user) {
-//         throw new NotFoundError('Нет пользователя с таким id');
-//       }
-//       return res.send(user);
-//     })
-//     .catch(next);
-// };
+const getUserInfo = (req, res, next) => {
+  User.findById(req.user.id)
+    .then((user) => {
+      if (!user) {
+        throw new NotFoundError('Нет пользователя с таким id');
+      }
+      return res.send(user);
+    })
+    .catch(next);
+};
 
 module.exports = {
   getUsers,
