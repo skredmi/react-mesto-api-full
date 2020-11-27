@@ -101,7 +101,7 @@ const login = (req, res, next) => {
 };
 
 const getUserInfo = (req, res, next) => {
-  User.findById(req.user._id)
+  User.findById(req.user.id)
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Нет пользователя с таким id');
