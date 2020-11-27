@@ -9,6 +9,7 @@ const routes = require('./routes/index.js');
 const auth = require('./middlewares/auth.js');
 const { login, createUser } = require('./controllers/users.js');
 const { requestLogger, errorLogger } = require('./middlewares/logger.js');
+const { HttpTransportOptions } = require('winston/lib/winston/transports');
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -17,7 +18,7 @@ app.use(cors());
 app.options('*', cors());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin': 'https://api.praktikummesto.students.nomoreparties.space');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, PATH, OPTIONS');
   next();
