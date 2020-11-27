@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
+const auth = require('../middlewares/auth');
 
 const {
   getUsers,
@@ -10,7 +11,7 @@ const {
 } = require('../controllers/users.js');
 
 router.get('/users', getUsers);
-router.get('/users/me', getUserInfo);
+router.get('/users/me', auth, getUserInfo);
 router.get(
   '/users/:id',
   celebrate({
