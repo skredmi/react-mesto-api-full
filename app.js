@@ -13,8 +13,14 @@ const { requestLogger, errorLogger } = require('./middlewares/logger.js');
 const app = express();
 const { PORT = 3000 } = process.env;
 
-app.use(cors());
-app.options('*', cors());
+const corsOptions = {
+    origin: ['*'],
+    allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Methods", "Access-Control-Request-Headers"],
+    credentials: true,
+    enablePreflight: true
+}
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
