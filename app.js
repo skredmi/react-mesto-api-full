@@ -2,9 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { errors } = require('celebrate');
 const bodyParser = require('body-parser');
-const { celebrate, Joi } = require('celebrate');
+const { celebrate, Joi, errors } = require('celebrate');
 const routes = require('./routes/index.js');
 const auth = require('./middlewares/auth.js');
 const { login, createUser } = require('./controllers/users.js');
@@ -13,20 +12,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger.js');
 const app = express();
 const { PORT = 3000 } = process.env;
 
-const corsOptions = {
-    origin: ['*'],
-    allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Methods", "Access-Control-Request-Headers"],
-    credentials: true,
-    enablePreflight: true
-}
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
