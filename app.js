@@ -10,6 +10,7 @@ const { login, createUser } = require('./controllers/users.js');
 const { requestLogger, errorLogger } = require('./middlewares/logger.js');
 
 const app = express();
+
 const { PORT = 3000 } = process.env;
 
 app.use(cors());
