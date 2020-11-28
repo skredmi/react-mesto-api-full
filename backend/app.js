@@ -45,6 +45,7 @@ app.post('/signup', celebrate({
     password: Joi.string().required().min(6),
   }),
 }), createUser);
+
 app.use('/', auth, routes);
 
 app.use(errorLogger);
@@ -52,11 +53,11 @@ app.use(errorLogger);
 app.use(errors());
 
 app.use((err, req, res, next) => {
-  if (err.status) {
-    res.status(err.status).send({ message: err.message });
-    return;
-  }
-  res.status(500).send({ message: `На сервере произошла ошибка: ${err.message}` });
+  const { statusCode = 500, message } = err;
+
+  res.status(statusCode).send({
+    message: statusCode === 500 ? 'На сервере произошла ошибка' : message,
+  });
   next();
 });
 

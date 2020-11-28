@@ -5,6 +5,7 @@ const User = require('../models/user');
 const { NODE_ENV, JWT_SECRET } = process.env;
 const NotFoundError = require('../errors/not-found-err');
 const ConflictError = require('../errors/conflict-err');
+const BadRequestError = require('../errors/bad-request-err');
 
 const getUsers = (req, res, next) => {
   User.find({})
@@ -68,6 +69,11 @@ const updateUser = (req, res, next) => {
     .then((user) => {
       res.send({ data: user });
     })
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        throw new BadRequestError('Переданы некорректные данные');
+      }
+    })
     .catch(next);
 };
 
@@ -84,6 +90,11 @@ const updateAvatar = (req, res, next) => {
   )
     .then((user) => {
       res.send({ data: user });
+    })
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        throw new BadRequestError('Переданы некорректные данные');
+      }
     })
     .catch(next);
 };
