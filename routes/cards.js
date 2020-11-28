@@ -18,9 +18,8 @@ router.post(
         name: Joi.string().required().min(2).max(30),
         link: Joi.string()
           .required()
-          .regex(/^http[s]?:\/\/\w+/),
-      })
-      .unknown(true),
+          .pattern(/^https?:\/\/(www\.)?[\w-.~:/?#[\]@!$&'()*+,;=]+#?$/i),
+      }),
   }),
   createCard,
 );
@@ -30,8 +29,7 @@ router.delete(
     params: Joi.object()
       .keys({
         cardId: Joi.string().required().hex(),
-      })
-      .unknown(true),
+      }),
   }),
   deleteCard,
 );
@@ -41,8 +39,7 @@ router.put(
     params: Joi.object()
       .keys({
         cardId: Joi.string().required().hex(),
-      })
-      .unknown(true),
+      }),
   }),
   likeCard,
 );
@@ -52,8 +49,7 @@ router.delete(
     params: Joi.object()
       .keys({
         cardId: Joi.string().required().hex(),
-      })
-      .unknown(true),
+      }),
   }),
   dislikeCard,
 );
