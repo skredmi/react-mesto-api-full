@@ -34,7 +34,8 @@ const createUser = (req, res, next) => {
       if (user) {
         throw new ConflictError({ message: 'Пользователь с таким email уже существует' });
       }
-    });
+    })
+    .catch(next);
   bcrypt
     .hash(password, 10)
     .then((hash) => User.create({
