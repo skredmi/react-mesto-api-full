@@ -32,7 +32,7 @@ const createUser = (req, res, next) => {
   User.findOne({ email })
     .then((user) => {
       if (user) {
-        throw new ConflictError({ message: 'Пользователь с таким email уже существует' });
+        throw new ConflictError('Пользователь с таким email уже существует');
       }
     })
     .catch(next);
