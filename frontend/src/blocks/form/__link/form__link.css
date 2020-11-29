@@ -1,0 +1,17 @@
+.form__link {
+    text-decoration: none;
+    align-self: center;
+    min-height: 17px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.form__link:hover {
+    transition: opacity 0.3s linear;
+    opacity: 0.6;
+}

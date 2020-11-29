@@ -1,0 +1,18 @@
+.form__notice {
+    min-height: 17px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    display: flex;
+}
+
+@media screen and (max-width: 767px) {
+    .form__notice {
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,22 @@
+@import url(__copyright/footer__copyright.css);
+
+.footer {
+    max-width: 882px;
+    height: 100%;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+@media screen and (max-width: 882px) {
+    .footer {
+        padding: 0 19px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer {
+        max-width: 282px;
+        padding-bottom: 36px;
+    }
+}
