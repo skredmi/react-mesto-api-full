@@ -7,7 +7,7 @@ const { celebrate, Joi, errors } = require('celebrate');
 const routes = require('./routes/index.js');
 const auth = require('./middlewares/auth.js');
 const { login, createUser } = require('./controllers/users.js');
-const { requestLogger, errorLogger } = require('./middlewares/logger.js');
+const { requestLogger, errorLogger } = require('./logs/logger.js');
 
 const app = express();
 
