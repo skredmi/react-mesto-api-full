@@ -12,7 +12,7 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: validator.isUrl,
+      validator: validator.isURL,
       message: 'Введен неверный формат url',
     },
   },

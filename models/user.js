@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
     validate: {
-      validator: validator.isUrl,
+      validator: validator.isURL,
       message: 'Введен неверный формат url',
     },
     default:
