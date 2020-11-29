@@ -1,0 +1,10 @@
+.form__fields {
+    max-width: 358px;
+    margin-bottom: 216px;
+}
+
+@media screen and (max-width: 767px) {
+    .form__fields {
+        max-width: 260px;
+    }
+}
