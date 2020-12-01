@@ -25,16 +25,13 @@ const createCard = (req, res, next) => {
 const deleteCard = (req, res, next) => {
   Card.findById(req.params.id)
     .then((card) => {
-      if (card.owner.toString() !== req.user._id) {
+      if (!card) {
+        throw new NotFoundError('Нет карточки с таким id');
+      } else if (card.owner.toString() !== req.user._id) {
         throw new ForbiddenError('Нельзя удалять чужие карточки');
       }
       Card.findByIdAndRemove(req.params.id)
-        .then((cardData) => {
-          if (!cardData) {
-            throw new NotFoundError('Нет карточки с таким id');
-          }
-          return res.send({ data: cardData });
-        });
+        .then((cardData) => res.send({ data: cardData }));
     })
     .catch(next);
 };
