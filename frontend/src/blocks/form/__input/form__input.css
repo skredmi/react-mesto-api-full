@@ -1,0 +1,25 @@
+.form__input {
+    width: 100%;
+    max-width: 100%;
+    min-height: 14px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color:#CCCCCC;
+    border: none;
+    background-color:  #000000;
+    border-bottom: 2px solid #CCCCCC;
+    margin-bottom: 5px;
+}
+
+.form__input:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 767px) {
+    .form__input {
+        min-height: 14px;
+        font-size: 14px;
+    }
+}
